@@ -31,13 +31,19 @@ for (i = 1; i <= 100; i++) {
     // aggiungo a quadrato la class di CSS.
     quadrato.classList.add("quadrato");
 
+    //(MILESTONE #3) adesso vado ad aggiungere ad ogni quadrato un evento clic 
+    quadrato.addEventListener("click", function () {
+        console.log("cliccato")
+
+    })
+
     //inserisco un numero progressivo a quadrato
     quadrato.innerText = i;
 
     //adesso aggiungo quadrato alla griglia
     griglia.append(quadrato);
-
-
 }
+
+
 
 
