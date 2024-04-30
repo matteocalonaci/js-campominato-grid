@@ -26,3 +26,7 @@ body {
     height: 3rem;
     border: 0.1rem solid red;
 }
+
+.evidenziato {
+    background-color: blue;
+}

@@ -25,24 +25,58 @@ let griglia = document.getElementById("griglia")
 
 for (i = 1; i <= 100; i++) {
 
-    //vado a creare una classe div equivalente ai quadrati in HTML e la salvo in una variabile.
+    // *vado a creare una classe div equivalente ai quadrati in HTML e la salvo in una variabile.
+
+    // **  aggiungo a quadrato la class di CSS.
+
+    // *** inserisco un numero progressivo a quadrato
+
+    //(MILESTONE #4) creo una nuova varibile che mi vada a richiamare la funzione creaQuadrato
+    let elemento = creaQuadrato(i);
+
+
+    //adesso aggiungo quadrato alla griglia
+    griglia.append(elemento);
+}
+
+
+//fuori dal ciclo vado a creare una funzione 
+// cos'è una cosa che ripetiamo nel ciclo FOR? --> il creare quadrato
+// prendiamo quindi la formala e la inseriamo in nella funzione.
+// che poi andremo a richiamare all'interno del ciclo.
+
+function creaQuadrato(contenuto) {
+    // *
     let quadrato = document.createElement("div");
 
-    // aggiungo a quadrato la class di CSS.
+    // ** 
     quadrato.classList.add("quadrato");
 
-    //(MILESTONE #3) adesso vado ad aggiungere ad ogni quadrato un evento clic 
+    // ***
+    quadrato.innerText = contenuto;
+
+    // **** (MILESTONE #3) adesso vado ad aggiungere ad ogni quadrato un evento clic 
     quadrato.addEventListener("click", function () {
         console.log("cliccato")
+        //aggiungo la classe eveidenziata  per i quadrati che vado a cliccare
+        quadrato.classList.toggle("evidenziato")
+
+        //uso toggle e non add perchè toggle mi permette in automatico di aggiungere la classe dove non c'è e toglierla dove c'è al solo click
+
+        // avrei potuto usare anche il this = elemento che ha ricevuto il click anche nel caso non avessimo la variabile di riferimento come in questo caso
+
+        // ----> this.classList.add("evidenziato")
 
     })
 
-    //inserisco un numero progressivo a quadrato
-    quadrato.innerText = i;
+    // restituisco il quadrato al chiamante della funzione
+    return quadrato
 
-    //adesso aggiungo quadrato alla griglia
-    griglia.append(quadrato);
 }
+
+
+
+
 
 
 
